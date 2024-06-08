@@ -1,0 +1,25 @@
+.hero{
+    background-color:lightsteelblue;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+    
+}
+
+.answer{
+    border-radius: 50px;
+    margin-top: 20px;
+    background-color:bisque;
+    font-size: 25px;
+    margin-bottom: 45px;
+    padding: 20px 20px;
+}
+
+input{
+    background-color: bisque;
+    border-radius: 10px;
+    font-size: 25px;
+    color:darkblue;
+    
+}
+
