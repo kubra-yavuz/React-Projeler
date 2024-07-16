@@ -4,7 +4,6 @@ import "./App.css";
 function App() {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
-
   function addItem() {
     if (!newItem) {
       alert("enter an item");
@@ -15,43 +14,31 @@ function App() {
       id: Math.floor(Math.random() * 1000),
       value: newItem,
     };
-
-    setItems((oldList) => [...oldList, item]);
-
+    setItems((oldItems) => [...oldItems, item]);
     setNewItem("");
-    console.log(items);
   }
-
   function deleteItem(id) {
     const newArray = items.filter((item) => item.id !== id);
     setItems(newArray);
   }
-
   return (
     <div className="App">
       <h1>Todo List App</h1>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          addItem();
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Add an Item..."
-          value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
-        />
-      </form>
-      <button onClick={(e) => addItem()}>Add</button>
+      <input
+        type="text"
+        placeholder="add an item"
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+
+      <button onClick={() => addItem()}>Add</button>
 
       <ul>
         {items.map((item) => {
           return (
             <li key={item.id}>
-              {" "}
-              {item.value}{" "}
-              <button onClick={(e) => deleteItem(item.id)}>X</button>{" "}
+              {item.value}
+              <button onClick={() => deleteItem(item.id)}>X</button>
             </li>
           );
         })}
