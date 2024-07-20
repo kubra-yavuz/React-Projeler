@@ -1,0 +1,22 @@
+.App{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    color: brown;
+background-color: beige;
+margin-top: 300px;
+    padding: 20px;
+}
+
+.btn{
+    background-color: darkcyan;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: bisque;
+    font-size: 20px;
+}
+
+.btnContainer{
+    display: ruby-text;
+    padding-top: 20px;
+}
