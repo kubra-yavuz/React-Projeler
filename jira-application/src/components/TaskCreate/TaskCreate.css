@@ -1,0 +1,33 @@
+.task-form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+.task-create{
+    width: 450px;
+  }
+
+.task-label{
+    margin: 10px 0px;
+}
+
+.task-input{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.task-button{
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 10px;
+    font-size: 19px;
+    cursor: pointer;
+}
+.task-button:hover{
+    background-color: rgb(46, 110, 112);
+}
