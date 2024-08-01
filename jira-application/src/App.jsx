@@ -1,13 +1,33 @@
 import "./App.css";
 import TaskCreate from "./components/TaskCreate/TaskCreate";
 import TaskList from "./components/TaskList/TaskList";
+import { useState } from "react";
+import TaskShow from "./components/TaskShow/TaskShow";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const createTask = (title, taskDesc) => {
+    const createdTasks = [
+      ...tasks,
+      {
+        id: Math.round(Math.random() * 999999),
+        title: title,
+        taskDesc: taskDesc,
+      },
+    ];
+    setTasks(createdTasks);
+  };
+  const DeleteTaskById = (id) => {
+    const afterDeletingTasks = tasks.filter((task) => {
+      return task.id !== id;
+    });
+    setTasks(afterDeletingTasks);
+  };
   return (
     <div className="App">
-      <TaskCreate />
+      <TaskCreate onCreate={createTask} />
       <h1>Görevler</h1>
-      <TaskList />
+      <TaskList tasks={tasks} onDelete={DeleteTaskById} />
     </div>
   );
 }
