@@ -6,6 +6,9 @@
 .task-create{
     width: 450px;
   }
+.task-update{
+    width: 100%;
+}
 
 .task-label{
     margin: 10px 0px;
@@ -30,4 +33,7 @@
 }
 .task-button:hover{
     background-color: rgb(46, 110, 112);
+}
+.update-button{
+background-color: blueviolet;
 }

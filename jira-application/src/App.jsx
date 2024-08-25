@@ -1,3 +1,4 @@
+//@flow
 import "./App.css";
 import TaskCreate from "./components/TaskCreate/TaskCreate";
 import TaskList from "./components/TaskList/TaskList";
@@ -23,11 +24,25 @@ function App() {
     });
     setTasks(afterDeletingTasks);
   };
+  const editTaskById = (id, updatedTitle, updatedTaskDesc) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { id, title: updatedTitle, taskDesc: updatedTaskDesc };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="App">
       <TaskCreate onCreate={createTask} />
       <h1>Görevler</h1>
-      <TaskList tasks={tasks} onDelete={DeleteTaskById} />
+      <TaskList
+        tasks={tasks}
+        onDelete={DeleteTaskById}
+        onUpdate={editTaskById}
+      />
     </div>
   );
 }
